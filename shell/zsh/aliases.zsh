@@ -18,3 +18,4 @@ alias pacman='sudo pacman'
 alias systemctl='sudo systemctl'
 alias :q="sudo systemctl poweroff"
 alias pacreset='pacman -R $(comm -23 <(pacman -Qq | sort) <((for i in $(pacman -Qqg base); do pactree -ul "$i"; done) | sort -u))'
+alias pacorphan='pacman -Rns $(pacman -Qtdq)'
